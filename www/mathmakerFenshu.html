@@ -27,18 +27,19 @@
 		};
 		function maindeal(num){
 			var a,b,c,d,e,f,g,h,k;
+			var maxintt = parseInt(document.getElementById("MaxIntt").value);
 			var funcnum;
 			for(var i = 0 ;i < num; i++){				
 				funcnum =  Math.floor(Math.random()*(7-0)+ 0);
-				a = Math.floor(Math.random()*(100-0)+ 0);
-				b = Math.floor(Math.random()*(100-0)+ 0);
-				c = Math.floor(Math.random()*(100-0)+ 0);
-				d = Math.floor(Math.random()*(100-0)+ 0);
-				e = Math.floor(Math.random()*(100-0)+ 0);
-				f = Math.floor(Math.random()*(100-0)+ 0);
-				g = Math.floor(Math.random()*(100-0)+ 0);
-				h = Math.floor(Math.random()*(100-0)+ 0);
-				k = Math.floor(Math.random()*(100-0)+ 0);				
+				a = Math.floor(Math.random()*(10-0)+ 1);
+				b = Math.floor(Math.random()*(maxintt-0)+ 1);
+				c = Math.floor(Math.random()*(10-0)+ 1);
+				d = Math.floor(Math.random()*(maxintt-0)+ 1);
+				e = Math.floor(Math.random()*(10-0)+ 1);
+				f = Math.floor(Math.random()*(10-0)+ 1);
+				g = Math.floor(Math.random()*(10-0)+ 1);
+				h = Math.floor(Math.random()*(10-0)+ 1);
+				k = Math.floor(Math.random()*(10-0)+ 1);				
 				var procon;
 				var proresult;				
 				switch(funcnum){
@@ -99,11 +100,7 @@
 			maindeal(pnumm);
 			renderFormula();
 		}
-	</script>
-	<!-- When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
-<p>1.$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p>
-$$x = {a \times {\left( 56 + c \times d \right) \over e}  + { a \over v}}.$$
-$$ {b}{a \over c}$$ -->
+	</script>	
 	<div id="imgdiv" style="width:100%;  z-index:-1;opacity:50"><img style="position:fixed;" src="img/back.jpg" height="100%" width="100%"> </div>
 	<div>
 		<div class="col-sm-12">		
@@ -111,20 +108,35 @@ $$ {b}{a \over c}$$ -->
 		<div class="col-sm-12">		
 		</div>
 		<div class="col-sm-12">		
-		<div class="col-sm-10" >
-	      <input id="pnum" class="form-control" type="text" id="formGroupInputLarge" placeholder="输入要生成的题目的数量">
+		<div class="col-sm-7" >
+	    	<input id="pnum" class="form-control" type="text" id="formGroupInputLarge" placeholder="输入要生成的题目的数量（超过500道，请注意左下角进度提示）">
 	    </div>
-	    <div class="col-sm-2">
-			<input type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg" onclick ="start()" value="start"  >
+	    <div class="col-sm-2" >
+	    	<input id="MaxIntt" class="form-control" type="text"  placeholder="输入算术式子中最大的数字">
+	    </div>
+	    <!-- <div class="col-sm-1"> -->
+			<!-- <input type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg" onclick ="start()" value="Start"  > -->
+			<div class="btn-group col-sm-1" role="group" aria-label="...">
+				<button type="button" class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-lg" onclick ="start()">开始生成</button>			  
+			</div>
+		<!-- </div>		 -->
+		<div class="dropdown col-sm-2">
+			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    设置
+		    <span class="caret"></span>
+		  	</button>
+		  	<ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+		  		<li class="disabled"><a href="#">生成分数运算</a></li>
+		   		<li><a href="#">Another action</a></li>		    
+		  	</ul>
+		</div>				
 		</div>	
-		</div>
-	
 		<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-		  <div class="modal-dialog modal-lg" role="document">
-		    <div class="modal-content">
-		      Please waite 3 seconds.
-		    </div>
-		  </div>
+			<div class="modal-dialog modal-lg" role="document">
+		  		<div class="modal-content">
+		      		Please wait 3 seconds...
+		    	</div>
+		  	</div>
 		</div>		
 	</div>
 	<div class="col-sm-12" style="height:15px;">		
@@ -139,23 +151,6 @@ $$ {b}{a \over c}$$ -->
 		<div class="col-sm-7" id="resultlist" style="background-color: white;left:15px;">			
 		</div>
 	</div>
-	<!-- <div id="">
-		<p>Problem:</p>
-
-	</div>
-	<div id="resultlist">
-		<p>Result:</p>
-	</div>		 -->
 </body>
 <foot><a href="https://github.com/assmdx">©1995 - 2017 Rzc Inc. All Rights Reserved.</a></foot>
 </html>
-<!-- a*(b_+ c* d)/e + a/v -->
-<!-- 
-a/b + c/d
-a/b - d e/f + g/h
-a/b + c/d * (e/f + g/h)
-a/b + c/d + e/f + g/h
- 
-
-
--->

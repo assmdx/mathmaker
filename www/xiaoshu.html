@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>小数加减法</title>
+	<script src="js/jquery.min.js"></script>
+	<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<style type="text/css"> 
+		#imgdiv{
+			filter: alpha(opacity=45); 
+			opacity:0.45;	
+		}
+	</style>
+</head>
+<body>
+	<script type="text/javascript">
+		var renderFormula = function(){  
+			var script = document.createElement("script");
+			script.type = "text/javascript";
+			script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+			document.getElementsByTagName("head")[0].appendChild(script);
+		};
+		function maindeal(num){
+			var a,b,c,d,e,f,g,h,k;
+			var maxintt = parseInt(document.getElementById("MaxIntt").value);
+			var funcnum;
+			for(var i = 0 ;i < num; i++){				
+				funcnum =  Math.floor(Math.random()*(7-0)+ 0);
+				a = Math.floor(Math.random()*(10-0)+ 1);
+				b = Math.floor(Math.random()*(maxintt-0)+ 1);
+				c = Math.floor(Math.random()*(10-0)+ 1);
+				d = Math.floor(Math.random()*(maxintt-0)+ 1);
+				e = Math.floor(Math.random()*(10-0)+ 1);
+				f = Math.floor(Math.random()*(10-0)+ 1);
+				g = Math.floor(Math.random()*(10-0)+ 1);
+				h = Math.floor(Math.random()*(10-0)+ 1);
+				k = Math.floor(Math.random()*(10-0)+ 1);				
+				var procon;
+				var proresult;				
+				switch(funcnum){
+					case 0:
+						procon =i+". $$ {"+a+" \\over "+b+"} + {"+c +"\\over "+d+"}.$$";
+						proresult= i+".$$ {" + (a*d+c*b) + " \\over "+b*d+"}$$";						
+						break;
+					case 1:
+						procon=i+".$$ {"+a+" \\over "+b+"} - {"+c+" \\over "+d+"}.$$";
+						proresult= i+".$$ {" + (a*d-c*b) + " \\over "+b*d+"}$$";
+						break;	
+					case 2:
+						procon=i+".$$ {"+a+" \\over "+b+"} \\times {"+c+" \\over "+d+"}.$$";
+						proresult=i+".$$ {" + (a*c) + " \\over "+b*d+"}$$";					
+						break;
+					case 3:
+						procon=i+".$$ {"+a+" \\over "+b+"} \\div {"+c+" \\over "+d+"}.$$";
+						proresult=i+".$$ {" + (a*d) + " \\over "+b*c+"}$$";					
+						break;
+					case 4:						
+						procon=i+".$$ {"+a+" \\over "+b+"} - {"+d+"}{"+e+" \\over "+f+"} +{"+g+" \\over "+h+"}.$$";
+						proresult=i+".$$ {" + (a*f*h-e*d*b*h+g*b*f) + " \\over "+b*f*h+"}$$";		
+						break;
+					case 5:
+						procon=i+".$$ {"+a+" \\over "+b+"} + {"+d+"}{"+e+" \\over "+f+"} -{"+g+" \\over "+h+"}.$$";
+						proresult=i+".$$ {" + (a*f*h+e*d*b*h-g*b*f) + " \\over "+b*f*h+"}$$";		
+						break;
+					case 6:
+						procon=i+".$$ {"+a+" \\over "+b+"} + {"+c+" \\over "+d+"} \\times {\\left( {"+e+" \\over "+f+"} + {"+g+" \\over "+h+"} \\right)}.$$";
+						proresult=i+".$$ {" + (a*f*h*d+e*c*h+d*f*g) + " \\over "+b*d*f*h+"}$$";		
+						break;	
+					case 7:
+						procon=i+".$$ {"+a+" \\over "+b+"} + {"+k+"}{"+c+" \\over "+d+"} + {\\left( {"+e+" \\over "+f+"} + {"+g+" \\over "+h+"} \\right)}.$$";
+						proresult=i+".$$ {" + (a*f*h*d+k*c*h*b+b*f*h*e+b*d*f*g) + " \\over "+b*d*f*h+"}$$";		
+						break;	
+				}
+				console.log(procon);
+				addDom(0,procon);
+				// console.log(procon);
+				addDom(1,proresult);
+			}			
+		}
+		function addDom(option,con){
+			if(option ==0){
+				var a = document.createElement("p");
+				a.innerHTML=con;
+				document.getElementById("problemlist").appendChild(a);
+			}			
+			if(option ==1){
+				var a = document.createElement("p");
+				a.innerHTML=con;
+				document.getElementById("resultlist").appendChild(a);
+			}			
+		}
+		function start(){
+			var pnumm = parseInt(document.getElementById("pnum").value);
+			// console.log(pnumm);
+			maindeal(pnumm);
+			renderFormula();
+		}
+	</script>	
+	<div id="imgdiv" style="width:100%;  z-index:-1;opacity:50"><img style="position:fixed;" src="img/back.jpg" height="100%" width="100%"> </div>
+	<div>
+		<div class="col-sm-12">		
+		</div>
+		<div class="col-sm-12">		
+		</div>
+		<div class="col-sm-12">		
+		<div class="col-sm-7" >
+	    	<input id="pnum" class="form-control" type="text" id="formGroupInputLarge" placeholder="输入要生成的题目的数量（超过500道，请注意左下角进度提示）">
+	    </div>
+	    <div class="col-sm-2" >
+	    	<input id="MaxIntt" class="form-control" type="text"  placeholder="输入算术式子中最大的数字">
+	    </div>
+	    <!-- <div class="col-sm-1"> -->
+			<!-- <input type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg" onclick ="start()" value="Start"  > -->
+			<div class="btn-group col-sm-1" role="group" aria-label="...">
+				<button type="button" class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-lg" onclick ="start()">开始生成</button>			  
+			</div>
+		<!-- </div>		 -->
+		<div class="dropdown col-sm-2">
+			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    设置
+		    <span class="caret"></span>
+		  	</button>
+		  	<ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+		  		<li class="disabled"><a href="#">生成分数运算</a></li>
+		   		<li><a href="#">Another action</a></li>		    
+		  	</ul>
+		</div>				
+		</div>	
+		<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+			<div class="modal-dialog modal-lg" role="document">
+		  		<div class="modal-content">
+		      		Please wait 3 seconds...
+		    	</div>
+		  	</div>
+		</div>		
+	</div>
+	<div class="col-sm-12" style="height:15px;">		
+	</div>
+	<div class="col-sm-12">			
+		<div class="col-sm-7" id ="problemlist" style="background-color: white;left:15px;">			
+		</div>
+		<div class="col-sm-4">		
+		</div>
+		<div class="col-sm-12" style="height:15px;">		
+		</div>
+		<div class="col-sm-7" id="resultlist" style="background-color: white;left:15px;">			
+		</div>
+	</div>
+</body>
+<foot><a href="https://github.com/assmdx">©1995 - 2017 Rzc Inc. All Rights Reserved.</a></foot>
+</html>
