@@ -14,4 +14,33 @@ m%1000 * 1.0 / 100
 		-461
 		-4
 		-61
-@
+
+@小数四则运算
+0:  a * b							$$ { a } \ times { b }.$$
+1:  a / b							$$ { a } \ div { b }.$$
+2:  a * b + c * d                   $$ { a } \ times { b } + { c } \times { d }.$$ 
+3:  a * b - c * d                   $$ { a } \ times { b } - { c } \times { d }.$$ 
+4:  a / b + c * d                   $$ { a } \ div { b } + { c } \times { d }.$$ 
+5:  a / b + c / d                   $$ { a } \ div { b } + { c } \div { d }.$$ 
+6:  a - (b * c + d) * e             $$ { a - {\left( {b \times c} + {d}   \right)} \times e }.$$
+7:  (a * b + c - d) * e + f         $$ {{\left( {a \times b} + {c} - {d}   \right)} \times e + f}.$$  
+8:  (a * b) - (c / d)               $$ {{\left( {a \times b} \right)}  - {\left( {c \div d} \right)}}.$$  
+9:  (a / b) + (c * d)				$$ {{\left( {a \div b} \right)}  + {\left( {c \times d} \right)}}.$$  
+
+@整数四则运算
+0:  a * b							$$ { a } \ times { b }.$$
+1:  a / b							$$ { a } \ div { b }.$$
+2:  a * b + c * d                   $$ { a } \ times { b } + { c } \times { d }.$$ 
+3:  a * b - c * d                   $$ { a } \ times { b } - { c } \times { d }.$$ 
+4:  a / b + c * d                   $$ { a } \ div { b } + { c } \times { d }.$$ 
+5:  a / b + c / d                   $$ { a } \ div { b } + { c } \div { d }.$$ 
+6:  a - (b * c + d) * e             $$ { a - {\left( {b \times c} + {d}   \right)} \times e }.$$
+7:  (a * b + c - d) * e + f         $$ {{\left( {a \times b} + {c} - {d}   \right)} \times e + f}.$$  
+8:  (a * b) - (c / d)               $$ {{\left( {a \times b} \right)}  - {\left( {c \div d} \right)}}.$$  
+9:  (a / b) + (c * d)				$$ {{\left( {a \div b} \right)}  + {\left( {c \times d} \right)}}.$$  
+
+@分数
+
+分子为0
+分子分母最简化
+带分数
